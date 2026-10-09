@@ -864,12 +864,16 @@
       display: grid;
       width: clamp(96px, 13vw, 160px);
       aspect-ratio: 1;
-      place-items: center;
+      align-content: center;
+      justify-items: center;
+      gap: 7px;
+      padding: 12px;
       border-radius: 50%;
       border: 1px solid rgb(255 255 255 / 55%);
       background: #303030;
       color: #f8f8f6;
       transition: background .2s ease, transform .2s ease;
+      animation: invitation-pulse 2.2s ease-in-out infinite;
     }
 
     .wish-mark:hover,
@@ -879,13 +883,25 @@
     }
 
     .wish-mark svg {
-      width: 43%;
-      height: 43%;
+      width: 38%;
+      height: 38%;
       fill: none;
       stroke: currentColor;
       stroke-linecap: round;
       stroke-linejoin: round;
       stroke-width: 1.5;
+    }
+
+    .wish-mark span {
+      font-size: clamp(9px, 1vw, 12px);
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    @keyframes invitation-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgb(255 255 255 / 0%); }
+      50% { box-shadow: 0 0 0 9px rgb(255 255 255 / 10%); }
     }
 
     .footer-line {
@@ -1241,7 +1257,12 @@
 
       .wish-mark {
         width: 75px;
-        font-size: 35px;
+        gap: 4px;
+        padding: 7px;
+      }
+
+      .wish-mark span {
+        font-size: 7px;
       }
 
       .wish-copy p {
@@ -1354,6 +1375,10 @@
 
       .birthday-clown {
         display: none;
+      }
+
+      .wish-mark {
+        animation: none;
       }
     }
   </style>
@@ -1479,11 +1504,12 @@
         <h2 id="wish-title">Semoga semua hal baik menemukan jalannya kepadamu.</h2>
         <p>Selamat ulang tahun! Semoga tahun ini dipenuhi tawa yang tulus, mimpi yang tumbuh, dan momen yang ingin dikenang selamanya.</p>
       </div>
-      <a class="wish-mark" href="pesan.html" aria-label="Buka pesan ulang tahun untuk Kalista">
+      <a class="wish-mark" href="pesan.html" aria-label="Please open: buka pesan ulang tahun untuk Kalista">
         <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
           <rect x="5.5" y="10" width="37" height="28" rx="2" />
           <path d="m7 13 17 13 17-13M7 36l12-11m22 11L29 25" />
         </svg>
+        <span>Please open</span>
       </a>
     </section>
 
