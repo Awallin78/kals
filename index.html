@@ -720,12 +720,12 @@
     .moment--photo::before {
       position: absolute;
       z-index: -1;
-      inset: -72px 0;
+      inset: -130px 0;
       background:
         linear-gradient(90deg, rgb(229 229 226 / 92%) 0%, rgb(229 229 226 / 82%) 48%, rgb(229 229 226 / 16%) 100%),
         url("momen-02-kalista.png") center 45% / cover;
       content: "";
-      transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.03);
+      transform: translate3d(0, var(--parallax-y, 0px), 0) scale(1.08);
       will-change: transform;
     }
 
@@ -1400,7 +1400,7 @@
       </div>
 
       <div class="hero-visual" aria-label="Suasana perayaan ulang tahun">
-        <span class="sparkle sparkle-one" aria-hidden="true">✳</span>
+        <span class="sparkle sparkle-one" aria-hidden="true"></span>
         <div class="hero-photo">
           <img src="kalista-photo.png" alt="Foto Kalista berkacamata" fetchpriority="high" />
         </div>
@@ -1536,7 +1536,7 @@
           const bounds = card.getBoundingClientRect();
           if (bounds.bottom < 0 || bounds.top > window.innerHeight) return;
           const progress = (window.innerHeight - bounds.top) / (window.innerHeight + bounds.height);
-          const offset = (progress - 0.5) * 128;
+          const offset = (progress - 0.5) * 220;
           card.style.setProperty("--parallax-y", `${offset}px`);
         });
       };
